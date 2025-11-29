@@ -180,14 +180,29 @@ class SlideDeck {
    * Calculate the current slide index based on the current scroll position.
    */
   calcCurrentSlideIndex() {
-    const scrollPos = window.scrollY - this.container.offsetTop;
+    // Height of the viewport
     const windowHeight = window.innerHeight;
 
+    // How far down the page we've scrolled so far; calculated from the top of
+    // the page
+    const scrollPos = window.scrollY;
+
+    // Amount of next slide that must be visible above the bottom of the window
+    // to trigger a slide transition
+    const scrollPeek = 64;
+
+    // When the next slide peeks above the bottom of the viewport a certain
+    // amount, we consider that we've reached the next slide.
+    const currentSlideThreshold = scrollPos + windowHeight - scrollPeek;
+
+    // Create a variable to hold the index of each slide as we check it.
     let i;
-    for (i = 0; i < this.slides.length; i++) {
+
+    // Start from the last slide and work backwards to find the current slide.
+    for (i = this.slides.length - 1; i > 0; i--) {
       const slidePos =
-        this.slides[i].offsetTop - scrollPos + windowHeight * 0.7;
-      if (slidePos >= 0) {
+        this.slides[i].offsetTop + this.container.offsetTop;
+      if (slidePos <= currentSlideThreshold) {
         break;
       }
     }
