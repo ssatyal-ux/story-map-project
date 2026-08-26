@@ -1,6 +1,6 @@
 import { SlideDeck } from './slidedeck.js';
 
-const map = L.map('map', {scrollWheelZoom: false}).setView([0, 0], 0);
+const map = L.map('map', { scrollWheelZoom: false }).setView([0, 0], 0);
 
 // ## The Base Tile Layer
 const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {

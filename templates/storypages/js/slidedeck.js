@@ -41,10 +41,10 @@ class SlideDeck {
         if (feature.properties && feature.properties.label) {
           layer.bindTooltip(feature.properties.label);
         }
-      }
+      },
     };
     const geoJsonLayer = L.geoJSON(data, options || defaultOptions)
-        .addTo(this.dataLayer);
+      .addTo(this.dataLayer);
 
     return geoJsonLayer;
   }
@@ -99,8 +99,8 @@ class SlideDeck {
     const boundsFromBbox = (bbox) => {
       const [west, south, east, north] = bbox;
       const bounds = L.latLngBounds(
-          L.latLng(south, west),
-          L.latLng(north, east),
+        L.latLng(south, west),
+        L.latLng(north, east),
       );
       return bounds;
     };

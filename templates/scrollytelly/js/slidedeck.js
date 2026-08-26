@@ -43,10 +43,10 @@ class SlideDeck {
         if (feature.properties && feature.properties.label) {
           layer.bindTooltip(feature.properties.label);
         }
-      }
+      },
     };
     const geoJsonLayer = L.geoJSON(data, options || defaultOptions)
-        .addTo(this.dataLayer);
+      .addTo(this.dataLayer);
 
     return geoJsonLayer;
   }
@@ -98,8 +98,8 @@ class SlideDeck {
     const boundsFromBbox = (bbox) => {
       const [west, south, east, north] = bbox;
       const bounds = L.latLngBounds(
-          L.latLng(south, west),
-          L.latLng(north, east),
+        L.latLng(south, west),
+        L.latLng(north, east),
       );
       return bounds;
     };
@@ -200,8 +200,8 @@ class SlideDeck {
 
     // Start from the last slide and work backwards to find the current slide.
     for (i = this.slides.length - 1; i > 0; i--) {
-      const slidePos =
-        this.slides[i].offsetTop + this.container.offsetTop;
+      const slidePos
+        = this.slides[i].offsetTop + this.container.offsetTop;
       if (slidePos <= currentSlideThreshold) {
         break;
       }
