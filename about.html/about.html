@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Housing Affordability and Access in Philadelphia</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <main>
+    <!-- The map container, used by Leaflet -->
+    <div
+      class="map"
+      id="map"
+      role="region"
+      aria-label="Interactive map of housing in Philadelphia"
+    ></div>
+
+    <!-- The slides container -->
+    <section
+      class="slide-section"
+      aria-label="About this story map"
+    >
+      <article class="slide" id="title-slide">
+        <h1>Philadelphia’s Housing Need</h1>
+
+        <p>
+          This story map examines the geographic distribution of affordable
+          housing in Philadelphia and how it relates to neighborhood housing
+          conditions and socioeconomic characteristics.
+        </p>
+      </article>
+
+      <article class="slide" id="second-slide">
+        <h2>Data Domain</h2>
+
+        <p>
+          The project will use data on affordable housing production,
+          Philadelphia Housing Authority properties, property assessments,
+          household income, rent, and housing-cost burden.
+        </p>
+
+        <p>
+          These datasets will be used to compare the existing supply of
+          affordable housing with neighborhood-level indicators of housing need
+          and potential investment opportunities.
+        </p>
+      </article>
+
+      <article class="slide" id="third-slide">
+        <h2>Target Audience and Persona</h2>
+
+        <h3>Shubhanga, an Affordable Housing Appraiser</h3>
+
+        <p>
+          Shubhanga is a real estate appraiser who specializes in affordable
+          multifamily housing. He needs reliable geographic and socioeconomic
+          information to evaluate neighborhood conditions, understand local
+          housing demand, and identify areas that may support future affordable
+          housing investment.
+        </p>
+
+        <p>
+          This story map is designed for appraisers, valuation professionals,
+          affordable housing developers, and other practitioners evaluating
+          future investment opportunities in Philadelphia.
+        </p>
+      </article>
+
+      <div class="slide-controls">
+        <button
+          class="slide-nav-button"
+          id="prev-slide"
+          type="button"
+          aria-label="Go to previous slide"
+        >
+          ⧏
+        </button>
+
+        <button
+          class="slide-nav-button"
+          id="next-slide"
+          type="button"
+          aria-label="Go to next slide"
+        >
+          ⧐
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/index.js" type="module"></script>
+</body>
+</html>
