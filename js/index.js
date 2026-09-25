@@ -1,6 +1,6 @@
 import { SlideDeck } from './slidedeck.js';
 //#Philly coordinates
-const map = L.map('map', { scrollWheelZoom: false }).setView([39.95, -75.16], 20);
+const map = L.map('map', { scrollWheelZoom: false, zoomSnap:0 }).setView([39.95, -75.16], 20);
 
 // ## The Base Tile Layer - I asked ChatGPT to find me this base tile for gray background
 const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
@@ -19,10 +19,10 @@ const slideOptions = {
   'City_Limits': {
     style: (feature) => {
       return {
-        color: 'black',
+        color: 'red',
         weight: 1,
-        fillColor: 'black',
-        fillOpacity: 0.9,
+        fillColor: 'gray',
+        fillOpacity: 2,
       };
     },
     onEachFeature: (feature, layer) => {
@@ -75,6 +75,41 @@ const slideOptions = {
   'neighborhood': {
     style: (feature) => {
       return { color: 'red', weight: 4, fillColor: 'red', fillOpacity: 0.1 };
+    },
+  },
+  /* coded by myself - syntax and debugging by claude */
+  'packer-park': {
+    pointToLayer: (feature, latlng) => {
+      return L.circleMarker(latlng, {
+        radius: 10,
+        fillColor: 'white',
+        color: 'red',
+        weight: 3,
+        opacity: 1,
+        fillOpacity: 0.8,
+      });
+    },
+  },
+  'specific':{
+    pointToLayer: (feature, latlng) => {
+      return L.circleMarker (latlng, {
+        radius: 20,
+        fillColor: 'white',
+        color: 'red',
+        weight: 3,
+        opacity: 1,
+        fillOpacity:0.8
+      })
+    }
+  },
+  'vacant-land':{
+    style: (feature) => {
+      return { color: 'white', weight: 0.03, fillColor: 'lightgreen', fillOpacity: 1 };
+    },
+  },
+    'specific_vacant':{
+    style: (feature) => {
+      return { color: 'white', weight: 0.03, fillColor: 'lightgreen', fillOpacity: 1 };
     },
   },
 };
