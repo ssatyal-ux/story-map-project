@@ -32,7 +32,7 @@ body {
   margin-left: auto;
   margin-right: 2rem;
   padding: 1rem;
-  box-shadow: -0.5rem 0 1rem rgb(0 0 0 / 50%);
+  box-shadow: -0.5rem 0 1rem rgba(141, 224, 242, 0.5);
   border: 1px solid gray;
   border-radius: 0.5rem;
   pointer-events: initial;
@@ -40,7 +40,7 @@ body {
   width: 25rem;
 
   background-color: white;
-  color: black;
+  color: rgb(41, 38, 38);
 }
 
 .slide:first-child {
@@ -48,7 +48,7 @@ body {
 }
 
 .slide:last-child {
-  margin-bottom: 40vh;
+  margin-bottom: 2rem;
 }
 
 .slide-controls {

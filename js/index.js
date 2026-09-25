@@ -20,9 +20,10 @@ const slideOptions = {
   'City_Limits': {
     style: (feature) => {
       return {
-        color: 'red',
-        fillColor: 'green',
-        fillOpacity: 0.5,
+        color: 'black',
+        weight: 1, 
+        fillColor: 'lightblue',
+        fillOpacity: 0.7,
       };
     },
     onEachFeature: (feature, layer) => {

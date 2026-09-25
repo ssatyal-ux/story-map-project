@@ -136,4 +136,82 @@ class SlideDeck {
   }
 
   /**
-   * Increment the 
+   * Increment the currentSlideIndex and show the corresponding slide. If the
+   * current slide is the final slide, then the next is the first.
+   */
+  goNextSlide() {
+    this.currentSlideIndex++;
+
+    if (this.currentSlideIndex === this.slides.length) {
+      this.currentSlideIndex = 0;
+    }
+
+    this.syncMapToCurrentSlide();
+  }
+
+  /**
+   * Decrement the currentSlideIndes and show the corresponding slide. If the
+   * current slide is the first slide, then the previous is the final.
+   */
+  goPrevSlide() {
+    this.currentSlideIndex--;
+
+    if (this.currentSlideIndex < 0) {
+      this.currentSlideIndex = this.slides.length - 1;
+    }
+
+    this.syncMapToCurrentSlide();
+  }
+
+  /**
+   * ### preloadFeatureCollections
+   *
+   * Initiate a fetch on all slide data so that the browser can cache the
+   * requests. This way, when a specific slide is loaded it has a better chance
+   * of loading quickly.
+   */
+  preloadFeatureCollections() {
+    for (const slide of this.slides) {
+      this.getSlideFeatureCollection(slide);
+    }
+  }
+
+  /**
+   * Calculate the current slide index based on the current scroll position.
+   */
+  calcCurrentSlideIndex() {
+    // Height of the viewport
+    const windowHeight = window.innerHeight;
+
+    // How far down the page we've scrolled so far; calculated from the top of
+    // the page
+    const scrollPos = window.scrollY;
+
+    // Amount of next slide that must be visible above the bottom of the window
+    // to trigger a slide transition
+    const scrollPeek = 64;
+
+    // When the next slide peeks above the bottom of the viewport a certain
+    // amount, we consider that we've reached the next slide.
+    const currentSlideThreshold = scrollPos + windowHeight - scrollPeek;
+
+    // Create a variable to hold the index of each slide as we check it.
+    let i;
+
+    // Start from the last slide and work backwards to find the current slide.
+    for (i = this.slides.length - 1; i > 0; i--) {
+      const slidePos
+        = this.slides[i].offsetTop + this.container.offsetTop;
+      if (slidePos <= currentSlideThreshold) {
+        break;
+      }
+    }
+
+    if (i !== this.currentSlideIndex) {
+      this.currentSlideIndex = i;
+      this.syncMapToCurrentSlide();
+    }
+  }
+}
+
+export { SlideDeck };
