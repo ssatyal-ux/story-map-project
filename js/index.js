@@ -1,6 +1,6 @@
 import { SlideDeck } from './slidedeck.js';
-
-const map = L.map('map', { scrollWheelZoom: false }).setView([0, 0], 0);
+//#Philly coordinates
+const map = L.map('map', { scrollWheelZoom: false }).setView([39.95, -75.16], 11);
 
 // ## The Base Tile Layer - I asked ChatGPT to find me this base tile for gray background
 const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
@@ -12,9 +12,12 @@ baseTileLayer.addTo(map);
 // ## Interface Elements
 const container = document.querySelector('.slide-section');
 const slides = document.querySelectorAll('.slide');
+//#asked AI how to add legend
+const legend = document.querySelector('#map-legend');
+
 
 const slideOptions = {
-  'second-slide': {
+  'City_Limits': {
     style: (feature) => {
       return {
         color: 'red',
@@ -26,7 +29,7 @@ const slideOptions = {
       layer.bindTooltip(feature.properties.label);
     },
   },
-  'third-slide': {
+  'market_divide': {
     style: (feature) => {
       return {
         color: 'blue',
