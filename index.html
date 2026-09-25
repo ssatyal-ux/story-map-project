@@ -1,42 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Story</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
+
+ <title>Site Selection for Affordable Housing in Philadelphia</title>
+
+// not many changes here. just added all content that I had wireframed using Arc GIS and a word doc.
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-  <main>
-    <div class="map-container">
-      <div class="map" id="map"></div>
-    </div>
-    <section class="slide-section">
-      <article class="slide" id="City_Limits">
-        <p>Shubhanga Satyal</p>
-        <h1>Where Could Philadelphia Build Affordable Housing?</h1>
-        <p> <p>
+ <main>
+   <div class="map-container">
+     <div class="map" id="map"></div>
+     <div class="market-legend" id="map-legend"></div>
+   </div>
+
+
+   <section class="slide-section">
+
+
+     <article class="slide" id="City_Limits">
+       <h1>Where Could Philadelphia Build Affordable Housing?</h1>
+
+
+       <p>
          Philadelphia has subsidized housing across the city, but where that housing
          is located matters. Some neighborhoods have stronger housing markets and
          fewer affordable homes, raising questions about access and future development.
        </p>
+
+
        <p>
          Where is subsidized housing located, and what opportunities might exist for
          future development? We’ll begin with the citywide picture before looking
          more closely at a neighborhood that may offer an opportunity for affordable
          housing construction.
-         </p>
+       </p>
 
-      </article>
 
-      <article class="slide" id="market-divide">
-        <h2>Philadelphia’s different housing markets</h2>
-          <p>
+       <p>Story map by Shubhanga Satyal</p>
+
+
+       <img
+         src="images/house.jpeg"
+         alt="Residential building"
+       >
+
+
+       <p>
+         Source:
+         <a href="https://www.pha.phila.gov/housing/">
+           Philadelphia Housing Authority
+         </a>
+       </p>
+     </article>
+
+
+     <article class="slide" id="market-divide">
+       <h2>Philadelphia’s different housing markets</h2>
+
+
+       <p>
          Philadelphia’s neighborhoods have different housing market conditions.
          Classes 1 and 2 represent stronger markets, while classes 4 and 5 represent
          weaker ones. Stronger markets tend to attract more private investment because
@@ -50,30 +82,63 @@
          it with the locations of subsidized housing.
        </p>
 
-      </article>
 
-      <article class="slide" id="subsidized-stock">
-      <h2>Where is subsidized housing?</h2>
+       <img
+         src="images/reinvestment.png"
+         alt="Image illustrating Philadelphia housing market conditions"
+       >
 
-         <p>
+
+       <p>
+         Source:
+         <a href="https://www.reinvestment.com/">
+           Reinvestment Fund
+         </a>
+       </p>
+     </article>
+
+
+     <article class="slide" id="subsidized-stock">
+       <h2>Where is subsidized housing?</h2>
+
+
+       <p>
          The dots show subsidized housing projects across Philadelphia. Each dot
          represents one project, but projects can have different numbers of units.
          Keep that in mind as you look at where the dots are concentrated.
        </p>
 
+
        <p>
          Showing these projects over the market map helps us compare the locations
          of subsidized housing with different market conditions.
        </p>
-        </article>
 
-      <article class="slide" id="need_shown">
-      <h2>Where are the gaps?</h2>
+
+       <img
+         src="images/subsidized.png"
+         alt="Image accompanying the discussion of subsidized housing"
+       >
+
+
+       <p>
+         Source:
+         <a href="https://portagehousing.org/frequently-asked-questions-about-low-income-public-housing/">
+           Portage Housing
+         </a>
+       </p>
+     </article>
+
+
+     <article class="slide" id="need_shown">
+       <h2>Where are the gaps?</h2>
+
 
        <p>
          The outlined areas have fewer than 100 dedicated affordable housing units
          in this dataset. Majorityof these outlined areas are the stronger housing markets.
        </p>
+
 
        <p>
          This raises a question of sociospatial equity: can people who need
@@ -82,15 +147,38 @@
          cannot tell us where new housing should be built.
        </p>
 
-        </article>
 
-      <article class="slide" id="neighborhood">
+       <img
+         src="images/gentrified.png"
+         alt="Image accompanying the discussion of neighborhood change"
+       >
+
+
+       <p>
+         Source:
+         <a href="https://philadelphia.today/2025/05/displaced-by-design-gentrification-report/">
+           Philadelphia Today
+         </a>
+       </p>
+
+
+       <p>
+         To explore what development might look like in one of these areas,
+         let’s turn to Packer Park. Its recent permit activity and vacant parcels
+         make it a useful neighborhood to examine more closely.
+       </p>
+     </article>
+
+
+     <article class="slide" id="neighborhood">
        <h2>Packer Park</h2>
+
 
        <p>
          We now move from the citywide map to Packer Park in South Philadelphia.
          Its neighborhood boundary appears over the same market map.
        </p>
+
 
        <p>
          Packer Park began with homes built in the 1950s and later expanded
@@ -98,9 +186,24 @@
          we’ll look at what recent permits and vacant-land records might tell
          us about opportunities for new housing.
        </p>
-      </article>
 
-       <article class="slide" id="packer-park">
+
+       <img
+         src="images/packerpark.png"
+         alt="Image of Packer Park"
+       >
+
+
+       <p>
+         Source:
+         <a href="https://en.wikipedia.org/wiki/Packer_Park,_Philadelphia">
+           Wikipedia
+         </a>
+       </p>
+     </article>
+
+
+     <article class="slide" id="packer-park">
        <h2>Permit locations</h2>
 
 
@@ -118,7 +221,7 @@
      </article>
 
 
-      <article class="slide" id="specific">
+     <article class="slide" id="specific">
        <h2>One example of new construction</h2>
 
 
@@ -127,9 +230,24 @@
          view of a building at this location. It helps connect the permit data
          on the map to what development can look like on the ground.
        </p>
-      </article>
 
-        </article>
+
+       <img
+         src="images/Image.jpg"
+         alt="Building at 1843 Hartranft Street"
+       >
+
+
+       <p>
+         Source:
+         <a href="https://www.zillow.com/homedetails/1843-Hartranft-St-16-Philadelphia-PA-19145/2059098110_zpid/">
+           Zillow listing for 1843 Hartranft St #16
+         </a>
+       </p>
+
+
+       <p>1843 Hartranft St #16, Philadelphia, PA 19145</p>
+     </article>
 
 
      <article class="slide" id="vacant-land">
@@ -150,7 +268,8 @@
        </p>
      </article>
 
-          <article class="slide" id="specific_vacant">
+
+     <article class="slide" id="specific_vacant">
        <h2>One site to investigate</h2>
 
 
@@ -178,12 +297,52 @@
        <p>
          From a sociospatial equity standpoint, it is worth investigating whether affordable housing here could give more households access to a neighborhood where they might otherwise struggle to find an affordable home. That matters because where people can afford to live shapes their access to jobs, services, and the opportunities a neighborhood offers.
        </p>
-          </article>
 
-    </section>
-  </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/index.js" type="module"></script>
+       <img
+         src="images/Potential_Image.png"
+         alt="Mapshaper view of the selected vacant parcel"
+       >
+
+
+       <p>Source: Screenshot from Mapshaper.</p>
+     </article>
+
+
+           <article class="slide" id="">
+       <h2>Data Sources:</h2>
+
+
+       <p>
+         City of Philadelphia, “City Limits,” OpenDataPhilly, accessed September 24, 2026,
+      
+        <a href="//opendataphilly.org/datasets/city-limits/. ">
+        opendataphilly.org/datasets/city-limits/.
+     </a>
+     <p>City of Philadelphia, “Market Value Assessment (MVA),” OpenDataPhilly, accessed September 24, 2026
+       <a href="https://opendataphilly.org/datasets/market-value-assessment/ ">
+        opendataphilly.org/datasets/market-value-assessment/ .
+     </a>
+     </p>
+
+
+           <p>City of Philadelphia, “Affordable Housing Production” OpenDataPhilly, accessed September 24, 2026
+       <a href="https://opendataphilly.org/datasets/affordable-housing-production/"".>
+        opendataphilly.org/datasets/affordable-housing-production/ .
+     </a>
+     </p>
+         City of Philadelphia, “Vacant Property Indicators,” OpenDataPhilly, accessed September 24, 2026,
+         <a href=" https://opendataphilly.org/datasets/vacant-property-indicators/.">
+            https://opendataphilly.org/datasets/vacant-property-indicators/.
+         </a>
+       </p>
+
+
+   </section>
+ </main>
+
+
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+ <script src="js/index.js" type="module"></script>
 </body>
 </html>
