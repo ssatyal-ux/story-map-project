@@ -13,95 +13,31 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
   <main>
-    <!-- The map container, used by Leaflet -->
-    <div
-      class="map"
-      id="map"
-      role="region"
-      aria-label="Interactive map of housing in Philadelphia"
-    ></div>
-
-    <!-- The slides container -->
-    <section
-      class="slide-section"
-      aria-label="About this story map"
-    >
+    <div class="map-container">
+      <div class="map" id="map"></div>
+    </div>
+    <section class="slide-section">
       <article class="slide" id="title-slide">
-        <h1>Philadelphia’s Housing Need</h1>
-
-        <p>
-          This story map examines the geographic distribution of affordable
-          housing in Philadelphia and how it relates to neighborhood housing
-          conditions and socioeconomic characteristics.
-        </p>
+        <h1>Story Map title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse molestie hendrerit quam, efficitur vestibulum justo vehicula a.</p>
+        <p>Nullam et metus eu eros facilisis commodo. Vivamus elementum nulla nisi, eget fermentum mauris placerat sed.</p>
       </article>
 
       <article class="slide" id="second-slide">
-        <h2>Data Domain</h2>
-
-        <p>
-          The project will use data on affordable housing production,
-          Philadelphia Housing Authority properties, property assessments,
-          household income, rent, and housing-cost burden.
-        </p>
-
-        <p>
-          These datasets will be used to compare the existing supply of
-          affordable housing with neighborhood-level indicators of housing need
-          and potential investment opportunities.
-        </p>
+        <h2>Second slide title</h2>
+        <p>Nunc dapibus arcu vel sapien rutrum rhoncus. Pellentesque dignissim, nisi ac pellentesque egestas, urna risus varius leo, eget efficitur risus tortor vel magna.</p>
+        <p>Suspendisse sed posuere velit, ac gravida elit. Nam viverra vehicula nisl ut gravida.</p>
       </article>
 
       <article class="slide" id="third-slide">
-        <h2>Target Audience and Persona</h2>
-
-        <h3>Shubhanga, an Affordable Housing Appraiser</h3>
-
-        <p>
-          Shubhanga is a real estate appraiser who specializes in affordable
-          multifamily housing. He needs reliable geographic and socioeconomic
-          information to evaluate neighborhood conditions, understand local
-          housing demand, and identify areas that may support future affordable
-          housing investment.
-        </p>
-
-        <p>
-          This story map is designed for appraisers, valuation professionals,
-          affordable housing developers, and other practitioners evaluating
-          future investment opportunities in Philadelphia.
-        </p>
+        <h2>Third slide title</h2>
+        <p>Pellentesque nunc tellus, euismod sed mauris vitae, volutpat viverra metus. Nunc vel nisl massa. Nunc ullamcorper interdum vehicula. Ut at mi congue, lacinia eros eget, gravida libero. Vivamus et cursus lorem. Nulla elementum neque a nunc sollicitudin, eget maximus turpis egestas. In hac habitasse platea dictumst. Maecenas aliquet nibh tempor leo pretium, vel congue dui malesuada. Sed non felis porttitor, laoreet ante ac, volutpat nibh. Sed tincidunt eleifend felis, et porttitor dui interdum scelerisque. Mauris eget eros pharetra, pretium justo nec, commodo tellus. Duis orci sem, vehicula a leo eget, lacinia venenatis neque. Duis purus enim, volutpat dapibus arcu eget, aliquam malesuada nulla. Duis nisi eros, semper eu bibendum condimentum, vehicula vel felis. Integer a lacus dictum, tempor nulla at, ornare ante.</p>
       </article>
-
-      <div class="slide-controls">
-        <button
-          class="slide-nav-button"
-          id="prev-slide"
-          type="button"
-          aria-label="Go to previous slide"
-        >
-          ⧏
-        </button>
-
-        <button
-          class="slide-nav-button"
-          id="next-slide"
-          type="button"
-          aria-label="Go to next slide"
-        >
-          ⧐
-        </button>
-      </div>
     </section>
   </main>
 

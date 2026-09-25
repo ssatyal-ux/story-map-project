@@ -1,0 +1,21 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.19033,39.91009]},"properties":{"OBJECTID":1,"permitnumber":"RP-2020-001575","addressobjectid":"172400511"},"id":1},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":2,"permitnumber":"RP-2023-000540","addressobjectid":"128132486"},"id":2},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":3,"permitnumber":"RP-2020-007027","addressobjectid":"128132486"},"id":3},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.190302,39.91022]},"properties":{"OBJECTID":4,"permitnumber":"RP-2020-000246","addressobjectid":"172393294"},"id":4},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.190288,39.910286]},"properties":{"OBJECTID":5,"permitnumber":"RP-2020-001785","addressobjectid":"172387995"},"id":5},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":6,"permitnumber":"RP-2023-000539","addressobjectid":"128132486"},"id":6},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.190344,39.910019]},"properties":{"OBJECTID":7,"permitnumber":"RP-2020-001574","addressobjectid":"172393318"},"id":7},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":8,"permitnumber":"RP-2020-007045","addressobjectid":"128132486"},"id":8},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.190316,39.910155]},"properties":{"OBJECTID":9,"permitnumber":"RP-2020-001570","addressobjectid":"172391949"},"id":9},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.189845,39.910911]},"properties":{"OBJECTID":10,"permitnumber":"RP-2020-002976","addressobjectid":"172396443"},"id":10},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":11,"permitnumber":"RP-2020-007010","addressobjectid":"128132486"},"id":11},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.189813,39.911054]},"properties":{"OBJECTID":12,"permitnumber":"RP-2020-002974","addressobjectid":"172398572"},"id":12},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":13,"permitnumber":"RP-2020-007026","addressobjectid":"128132486"},"id":13},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":14,"permitnumber":"RP-2020-007015","addressobjectid":"128132486"},"id":14},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":15,"permitnumber":"RP-2020-007003","addressobjectid":"128132486"},"id":15},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.189827,39.910989]},"properties":{"OBJECTID":16,"permitnumber":"RP-2020-002975","addressobjectid":"172393154"},"id":16},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":17,"permitnumber":"RP-2023-000541","addressobjectid":"128132486"},"id":17},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":18,"permitnumber":"RP-2020-007046","addressobjectid":"128132486"},"id":18},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":19,"permitnumber":"RP-2020-007034","addressobjectid":"128132486"},"id":19}
+]}

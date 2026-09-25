@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.180371,39.90966]},"properties":{"OBJECTID":1,"permitnumber":"RP-2023-000540","addressobjectid":"128132486"},"id":1}
+]}

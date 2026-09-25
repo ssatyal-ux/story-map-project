@@ -2,10 +2,10 @@ import { SlideDeck } from './slidedeck.js';
 
 const map = L.map('map', { scrollWheelZoom: false }).setView([0, 0], 0);
 
-// ## The Base Tile Layer
-const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
+// ## The Base Tile Layer - I asked ChatGPT to find me this base tile for gray background
+const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
   maxZoom: 16,
-  attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+  attribution: '&copy; <a href="https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 });
 baseTileLayer.addTo(map);
 
