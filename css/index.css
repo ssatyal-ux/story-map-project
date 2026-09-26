@@ -125,10 +125,10 @@ body {
 
 /* assigning legend colors and shapes */
 .city::before {background-color: orange;}
-.strong::before { background-color: black; }
+.strong::before { background-color: gold; }
 .middle::before { background-color: white; }
-.weak::before { background-color: darkgray; }
-.vacant::before { background-color: lightgreen; }
+.weak::before { background-color: lightgoldenrodyellow; }
+.vacant::before { background-color: darkgreen; }
 
 .housing::before {
   background-color: white;
@@ -147,7 +147,7 @@ body {
 
 .permit::before {
   background-color: white;
-  border-color: gold;
+  border-color: brown;
 }
 
 .xx::before {

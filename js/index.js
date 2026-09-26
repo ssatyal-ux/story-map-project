@@ -2,12 +2,12 @@ import { SlideDeck } from './slidedeck.js';
 // ##Philly coordinates + zoomsnap to make map zoom between slides so each map/slide fits better and zooms for narratie purposes
 const map = L.map('map', { scrollWheelZoom: false, zoomSnap: 0 }).setView([39.95, -75.16], 20);
 
-// ## The Base Tile Layer - I asked ChatGPT to find me this base tile for gray background
-const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
-  maxZoom: 16,
-  attribution: '&copy; <a href="https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
-});
-baseTileLayer.addTo(map);
+// ## The Base Tile Layer - CARTO dark basemap (no API key needed). my original choice did not work online
+const baseTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  maxZoom: 20,
+  subdomains: 'abcd',
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+}).addTo(map);
 
 /* Map legend: adapted from the professor's accessibility demo (initLegend) */
 
@@ -26,7 +26,6 @@ legend.onAdd = (map) => {
       <li class ="legend-item city"> Philadelphia City Limits </li>
       <li class = "legend-item xx"> ____________________</li>
       <li class = "legend-item xx"> Market Indicators: </li>
-      
       <li class = "">  </li>
       <li class =""       </li>
       <li class="legend-item strong">Stronger market (1–2)</li>
@@ -79,11 +78,11 @@ const slideOptions = {
       const mk = Number(feature.properties.mva_class);
 
       if (mk === 1 || mk === 2) {
-        return { color: 'black', weight: 0.1, fillColor: 'black', fillOpacity: 1 };
+        return { color: 'golden', weight: 0.1, fillColor: 'gold', fillOpacity: 1 };
       } else if (mk === 4 || mk === 5) {
-        return { color: 'gray', weight: 0.1, fillColor: 'darkgray', fillOpacity: 1 };
+        return { color: 'gray', weight: 0.1, fillColor: 'lightgoldenrodyellow', fillOpacity: 1 };
       } else {
-        return { color: 'gray', weight: 0.07, fillColor: 'orange', fillOpacity: 0.03 };
+        return { color: 'gray', weight: 0.07, fillColor: 'white', fillOpacity: 0.3 };
       }
     },
     onEachFeature: (feature, layer) => {
@@ -130,7 +129,7 @@ const slideOptions = {
       return L.circleMarker(latlng, {
         radius: 10,
         fillColor: 'white',
-        color: 'gold',
+        color: 'brown',
         weight: 3,
         opacity: 1,
         fillOpacity: 0.8,
@@ -142,7 +141,7 @@ const slideOptions = {
       return L.circleMarker (latlng, {
         radius: 20,
         fillColor: 'white',
-        color: 'gold',
+        color: 'brown',
         weight: 3,
         opacity: 1,
         fillOpacity: 0.8,
@@ -151,12 +150,12 @@ const slideOptions = {
   },
   'vacant-land': {
     style: (feature) => {
-      return { color: 'white', weight: 0.03, fillColor: 'lightgreen', fillOpacity: 1 };
+      return { color: 'white', weight: 0.03, fillColor: 'darkgreen', fillOpacity: 1 };
     },
   },
   'specific_vacant': {
     style: (feature) => {
-      return { color: 'white', weight: 0.03, fillColor: 'lightgreen', fillOpacity: 1 };
+      return { color: 'white', weight: 0.03, fillColor: 'darkgreen', fillOpacity: 1 };
     },
   },
 };
