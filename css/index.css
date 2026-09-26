@@ -32,7 +32,7 @@ body {
   margin-left: auto;
   margin-right: 2rem;
   padding: 1rem;
-  box-shadow: -0.5rem 0 1rem rgba(143, 141, 242, 0.5);
+  box-shadow: -0.5rem 0 1rem rgba(235, 177, 177, 0.5);
   border: 1px solid gray;
   border-radius: 0.5rem;
   pointer-events: initial;
@@ -74,17 +74,76 @@ body {
   font-size: 1.5em;
 }
 
-.slide-nav-button:hover {
-  background-color: #444;
-  color: #fff;
-}
+
 
 .slide-nav-select {
   min-width: 0;
 }
 
 /* keeping images inside the box - chat gpt assisted code*/
-
 .slide img {
   width: 100%;
 }
+
+/* Legend: adapted from the professor's custom_semantics example self and ChatGPT assisted*/
+.legend {
+  margin: 1rem 0;
+  border: 1px solid black;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 50%);
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.legend h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.legend ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.legend-item::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid rgb(0 0 0 / 25%);
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+.city::before {background-color: orange;}
+.strong::before { background-color: black; }
+.middle::before { background-color: white; }
+.weak::before { background-color: darkgray; }
+.vacant::before { background-color: lightgreen; }
+
+.housing::before {
+  background-color: white;
+  border-color: red;
+}
+.gap::before {
+  border: 2px solid red;
+  border-radius: 0;
+}
+
+.packer::before {
+  border: 2px solid pink;
+  border-radius: 0;
+}
+.permit::before {
+  background-color: white;
+  border-color: gold;
+}
+
+.xx::before {
+  border: white;
+  border-color: white;
+}
+
+.leaflet-control.legend {
+  background-color: white;
+}
+

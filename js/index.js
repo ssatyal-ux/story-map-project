@@ -9,20 +9,55 @@ const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_ton
 });
 baseTileLayer.addTo(map);
 
+/* Map legend: adapted from the professor's accessibility demo (initLegend) */
+const legend = L.control({ position: 'bottomleft' });
+
+legend.onAdd = (map) => {
+  const div = L.DomUtil.create('div', 'legend');
+  div.innerHTML = `
+    <h2>Map Key</h2>
+    <ul>
+      <li class = "__"_____________________</li>
+      <li class = "legend-item xx"> ____________________</li>
+      <li class = "legend-item xx"> City Level: </li>
+      <li class ="legend-item city"> Philadelphia City Limits </li>
+      <li class = "legend-item xx"> ____________________</li>
+      <li class = "legend-item xx"> Market Indicators: </li>
+      
+      <li class = "">  </li>
+      <li class =""       </li>
+      <li class="legend-item strong">Stronger market (1–2)</li>
+      <li class="legend-item middle">Middle market (3)</li>
+      <li class="legend-item weak">Weaker market (4–5)</li>
+      <li class = "legend-item xx"> ____________________</li>
+      <li class = "legend-item xx"> Housing:</li>
+      
+      <li class="legend-item housing">Subsidized housing</li>
+      <li class="legend-item gap">Gap area</li>
+      <li class = "legend-item xx"> ____________________</li>
+      <li class = "legend-item xx"> Neighborhood Level:</li>
+      <li class="legend-item packer">Packer Park Boundary</li>
+       <li class="legend-item permit">Permit</li>
+      <li class="legend-item vacant">Vacant parcel</li>
+    </ul>
+  `;
+  return div;
+};
+
+legend.addTo(map);
+
 // ## Interface Elements
 const container = document.querySelector('.slide-section');
 const slides = document.querySelectorAll('.slide');
-//#asked AI how to add legend
-const legend = document.querySelector('#map-legend');
 
 const slideOptions = {
   'City_Limits': {
     style: (feature) => {
       return {
-        color: 'red',
+        color: 'black',
         weight: 1,
-        fillColor: 'gray',
-        fillOpacity: 2,
+        fillColor: 'orange',
+        fillOpacity: 0.99,
       };
     },
     onEachFeature: (feature, layer) => {
@@ -74,7 +109,7 @@ const slideOptions = {
   /* coded by myself - syntax and debugging by claude */
   'neighborhood': {
     style: (feature) => {
-      return { color: 'red', weight: 4, fillColor: 'red', fillOpacity: 0.1 };
+      return { color: 'pink', weight: 4, fillColor: 'red', fillOpacity: 0.1 };
     },
   },
   /* coded by myself - syntax and debugging by claude */
@@ -83,7 +118,7 @@ const slideOptions = {
       return L.circleMarker(latlng, {
         radius: 10,
         fillColor: 'white',
-        color: 'red',
+        color: 'gold',
         weight: 3,
         opacity: 1,
         fillOpacity: 0.8,
@@ -95,7 +130,7 @@ const slideOptions = {
       return L.circleMarker (latlng, {
         radius: 20,
         fillColor: 'white',
-        color: 'red',
+        color: 'gold',
         weight: 3,
         opacity: 1,
         fillOpacity:0.8
