@@ -2,7 +2,6 @@ import { SlideDeck } from './slidedeck.js';
 // ##Philly coordinates + zoomsnap to make map zoom between slides so each map/slide fits better and zooms for narratie purposes
 const map = L.map('map', { scrollWheelZoom: false, zoomSnap: 0 }).setView([39.95, -75.16], 20);
 
-
 // ## The Base Tile Layer - Esri dark gray basemap (no API key needed). my original choice did not work online
 const baseTileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 20,
