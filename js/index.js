@@ -4,7 +4,7 @@ const map = L.map('map', { scrollWheelZoom: false, zoomSnap: 0 }).setView([39.95
 
 // ## The Base Tile Layer - Esri dark gray basemap (no API key needed). my original choice did not work online
 const baseTileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 20,
+  maxZoom: 16,
   maxNativeZoom: 16,
   attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
 }).addTo(map);
