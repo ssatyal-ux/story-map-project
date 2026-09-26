@@ -159,3 +159,17 @@ body {
   background-color: lightgray;
 }
 
+/* smaller screens: slides and legend shrink to fit phones - used Claude for this codee for mobile phone use */
+@media (width <= 600px) {
+  .slide {
+    width: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .legend {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
