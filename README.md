@@ -16,3 +16,6 @@ City of Philadelphia, “Vacant Property Indicators,” OpenDataPhilly, accessed
 Acknowledgment:
 Along with adapting code from the professor’s examples and class lessons and consulting internet sources, I used AI tools, including ChatGPT and Claude, to understand, decipher, debug, and format code in many instances. The overall thought process, structure, and story idea are my own.
 data analyzed using Arc GIS - by choice and for practice
+
+Basemap:
+© OpenStreetMap contributors © CARTO
