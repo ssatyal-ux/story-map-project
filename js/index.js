@@ -1,5 +1,5 @@
 import { SlideDeck } from './slidedeck.js';
-//#Philly coordinates
+// ##Philly coordinates + zoomsnap to make map zoom between slides so each map/slide fits better and zooms for narratie purposes
 const map = L.map('map', { scrollWheelZoom: false, zoomSnap:0 }).setView([39.95, -75.16], 20);
 
 // ## The Base Tile Layer - I asked ChatGPT to find me this base tile for gray background
@@ -10,8 +10,11 @@ const baseTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_ton
 baseTileLayer.addTo(map);
 
 /* Map legend: adapted from the professor's accessibility demo (initLegend) */
+
+//## legend now shows up constantly on every slide and sets it to the bottom left 
 const legend = L.control({ position: 'bottomleft' });
 
+//## setting up the legend where the <li> picks up legend feature from css. added lines for separation
 legend.onAdd = (map) => {
   const div = L.DomUtil.create('div', 'legend');
   div.innerHTML = `
@@ -44,13 +47,18 @@ legend.onAdd = (map) => {
   return div;
 };
 
+// ## legend sits on map
 legend.addTo(map);
 
-// ## Interface Elements
+// ## mostly from template 
+
+// ## Interface Elements - grabbing from html for each slide 
 const container = document.querySelector('.slide-section');
 const slides = document.querySelectorAll('.slide');
 
+//## matching slide contetn and map content
 const slideOptions = {
+  //## shows philly boundary
   'City_Limits': {
     style: (feature) => {
       return {
@@ -64,7 +72,8 @@ const slideOptions = {
       layer.bindTooltip(feature.properties.label);
     },
   },
-  /* coded by myself - syntax and debugging by claude */
+  // coded by myself - syntax and debugging by claude 
+  // slide 2 showing divide in market using mva data and then assigning colors
   'market-divide': {
     style: (feature) => {
       const mk = Number(feature.properties.mva_class);
@@ -81,7 +90,8 @@ const slideOptions = {
       layer.bindTooltip(feature.properties.label);
     },
   },
-  /* coded by myself - syntax and debugging by claude */
+  // coded by myself - syntax and debugging by claude 
+  // placing affordable housing stock on the map
   'subsidized-stock': {
     pointToLayer: (feature, latlng) => {
       return L.circleMarker(latlng, {
@@ -94,7 +104,9 @@ const slideOptions = {
       });
     },
   },
-  /* coded by myself - syntax and debugging by claude */
+  //coded by myself - syntax and debugging by claude 
+  //gap in affordable housing - all of these codes are repitive
+
   'need_shown': {
     style: (feature) => {
       const ck = Number(feature.properties.class_of_market);
@@ -106,13 +118,13 @@ const slideOptions = {
       }
     },
   },
-  /* coded by myself - syntax and debugging by claude */
+  // coded by myself - syntax and debugging by claude 
   'neighborhood': {
     style: (feature) => {
       return { color: 'pink', weight: 4, fillColor: 'red', fillOpacity: 0.1 };
     },
   },
-  /* coded by myself - syntax and debugging by claude */
+  //coded by myself - syntax and debugging by claude 
   'packer-park': {
     pointToLayer: (feature, latlng) => {
       return L.circleMarker(latlng, {
@@ -149,8 +161,7 @@ const slideOptions = {
   },
 };
 
-/* I wanted this to be a constant layer in the background. I asked ChatGPT tp tell me how I could. While I did see some of the lessons/examples and videos I did need help to figure this out using chat*/
-
+//I wanted this to be a constant layer in the background. I asked ChatGPT tp tell me how I could. While I did see some of the lessons/examples and videos I did need help to figure this out using chat*/
 const marketResponse = await fetch('data/market-divide.json');
 const marketData = await marketResponse.json();
 L.geoJSON(marketData, slideOptions['market-divide']).addTo(map);
