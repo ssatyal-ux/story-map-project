@@ -74,7 +74,7 @@ const slideOptions = {
       } else if (mk === 4 || mk === 5) {
         return { color: 'gray', weight: 0.1, fillColor: 'darkgray', fillOpacity: 1 };
       } else {
-        return { color: 'gray', weight: 0.07, fillColor: 'red', fillOpacity: 0.03 };
+        return { color: 'gray', weight: 0.07, fillColor: 'orange', fillOpacity: 0.03 };
       }
     },
     onEachFeature: (feature, layer) => {
