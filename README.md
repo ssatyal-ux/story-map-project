@@ -18,4 +18,4 @@ Along with adapting code from the professor’s examples and class lessons and c
 data analyzed using Arc GIS - by choice and for practice
 
 Basemap:
-© OpenStreetMap contributors © CARTO
+Basemap: Esri World Dark Gray Canvas (Esri, HERE, Garmin, © OpenStreetMap contributors).

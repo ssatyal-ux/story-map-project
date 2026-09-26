@@ -2,13 +2,13 @@ import { SlideDeck } from './slidedeck.js';
 // ##Philly coordinates + zoomsnap to make map zoom between slides so each map/slide fits better and zooms for narratie purposes
 const map = L.map('map', { scrollWheelZoom: false, zoomSnap: 0 }).setView([39.95, -75.16], 20);
 
-// ## The Base Tile Layer - CARTO dark basemap (no API key needed). my original choice did not work online
-const baseTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  maxZoom: 20,
-  subdomains: 'abcd',
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-}).addTo(map);
 
+// ## The Base Tile Layer - Esri dark gray basemap (no API key needed). my original choice did not work online
+const baseTileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 20,
+  maxNativeZoom: 16,
+  attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+}).addTo(map);
 /* Map legend: adapted from the professor's accessibility demo (initLegend) */
 
 // ## legend now shows up constantly on every slide and sets it to the bottom left
