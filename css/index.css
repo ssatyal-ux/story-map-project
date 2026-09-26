@@ -1,6 +1,5 @@
 /* page setup and layout- copy pasted from scrollytelly template and then adapted for my use */
 
-/*setting font*/
 body {
   margin: 0;
   border-width: 0;
@@ -10,7 +9,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/*making sure map stays in place while my slides glide through*/
+/* making sure map stays in place while my slides glide through */
 .map-container {
   position: sticky;
   top: 0;
@@ -18,12 +17,12 @@ body {
   z-index: 0;
 }
 
-/*map fills whole page*/
+/* map fills whole page */
 .map {
   height: 100%;
 }
 
-/*slide on top of map*/
+/* slide on top of map */
 .slide-section {
   position: relative;
   margin-top: -30vh;
@@ -32,7 +31,7 @@ body {
   border-bottom: 1px solid rgb(0 0 0 / 10%);
 }
 
-/*each slide is a gray box*/
+/* each slide is a gray box */
 .slide {
   margin-top: 90vh;
   margin-bottom: 90vh;
@@ -86,12 +85,12 @@ body {
   min-width: 0;
 }
 
-/* keeping images inside the box - chat gpt assisted code*/
+/* keeping images inside the box - chat gpt assisted code */
 .slide img {
   width: 100%;
 }
 
-/* Legend: adapted from the professor's custom_semantics example self and ChatGPT assisted*/
+/* Legend: adapted from the professor's custom_semantics example self and ChatGPT assisted */
 .legend {
   margin: 1rem 0;
   border: 1px solid black;
@@ -101,19 +100,19 @@ body {
   width: fit-content;
 }
 
-/*legend title*/
+/* legend title */
 .legend h2 {
   margin: 0;
   font-size: 1.1rem;
 }
 
-/*removing bullet points*/
+/* removing bullet points */
 .legend ul {
   list-style-type: none;
   padding: 0;
 }
 
-/* adding legend codes before  the word*/
+/* adding legend codes before  the word */
 .legend-item::before {
   content: "";
   display: inline-block;
@@ -124,7 +123,7 @@ body {
   border-radius: 50%;
 }
 
-/*assigning legend colors and shapes*/
+/* assigning legend colors and shapes */
 .city::before {background-color: orange;}
 .strong::before { background-color: black; }
 .middle::before { background-color: white; }
@@ -135,6 +134,7 @@ body {
   background-color: white;
   border-color: red;
 }
+
 .gap::before {
   border: 2px solid red;
   border-radius: 0;
@@ -144,6 +144,7 @@ body {
   border: 2px solid pink;
   border-radius: 0;
 }
+
 .permit::before {
   background-color: white;
   border-color: gold;
