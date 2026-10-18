@@ -17,5 +17,7 @@ Acknowledgment:
 Along with adapting code from the professor’s examples and class lessons and consulting internet sources, I used AI tools, including ChatGPT and Claude, to understand, decipher, debug, and format code in many instances. The overall thought process, structure, and story idea are my own.
 data analyzed using Arc GIS - by choice and for practice
 
+For AI: I reviewed the material on my own, made notes of code and then drafted code on my own - following which I pasted it on AI and asked it to correct if any mistakes. Sometimes when I did not know what to do, I directly asked AI for help to do that task - i have noted where and when. 
+
 Basemap:
 Basemap: Esri World Dark Gray Canvas (Esri, HERE, Garmin, © OpenStreetMap contributors).
