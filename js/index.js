@@ -19,26 +19,26 @@ legend.onAdd = (map) => {
   div.innerHTML = `
     <h2>Map Key</h2>
     <ul>
-      <li class = "__"_____________________</li>
-      <li class = "legend-item xx"> ____________________</li>
-      <li class = "legend-item xx"> City Level: </li>
-      <li class ="legend-item city"> Philadelphia City Limits </li>
-      <li class = "legend-item xx"> ____________________</li>
-      <li class = "legend-item xx"> Market Indicators: </li>
-      <li class = "">  </li>
-      <li class =""       </li>
+      <li class="__">_____________________</li>
+      <li class="legend-item xx"> ____________________</li>
+      <li class="legend-item xx"> City Level: </li>
+      <li class="legend-item city"> Philadelphia City Limits </li>
+      <li class="legend-item xx"> ____________________</li>
+      <li class="legend-item xx"> Market Indicators: </li>
+      <li class=""> </li>
+      <li class=""> </li>
       <li class="legend-item strong">Stronger market (1–2)</li>
-      <li class="legend-item middle">Middle market (3)</li>
+      
       <li class="legend-item weak">Weaker market (4–5)</li>
-      <li class = "legend-item xx"> ____________________</li>
-      <li class = "legend-item xx"> Housing:</li>
+      <li class="legend-item xx"> ____________________</li>
+      <li class="legend-item xx"> Housing:</li>
       
       <li class="legend-item housing">Subsidized housing</li>
       <li class="legend-item gap">Gap area</li>
-      <li class = "legend-item xx"> ____________________</li>
-      <li class = "legend-item xx"> Neighborhood Level:</li>
+      <li class="legend-item xx"> ____________________</li>
+      <li class="legend-item xx"> Neighborhood Level:</li>
       <li class="legend-item packer">Packer Park Boundary</li>
-       <li class="legend-item permit">Permit</li>
+      <li class="legend-item permit">Permit</li>
       <li class="legend-item vacant">Vacant parcel</li>
     </ul>
   `;
@@ -77,7 +77,7 @@ const slideOptions = {
       const mk = Number(feature.properties.mva_class);
 
       if (mk === 1 || mk === 2) {
-        return { color: 'golden', weight: 0.1, fillColor: 'gold', fillOpacity: 1 };
+        return { color: 'gold', weight: 0.1, fillColor: 'gold', fillOpacity: 1 };
       } else if (mk === 4 || mk === 5) {
         return { color: 'gray', weight: 0.1, fillColor: 'lightgoldenrodyellow', fillOpacity: 1 };
       } else {
@@ -137,7 +137,7 @@ const slideOptions = {
   },
   'specific': {
     pointToLayer: (feature, latlng) => {
-      return L.circleMarker (latlng, {
+      return L.circleMarker(latlng, {
         radius: 20,
         fillColor: 'white',
         color: 'brown',
@@ -165,6 +165,55 @@ const marketData = await marketResponse.json();
 L.geoJSON(marketData, slideOptions['market-divide']).addTo(map);
 
 // ## The SlideDeck object
+// Hover labels for each slide, keyed by the slide's id. The data files
+// don't have a "label" property, so each slide says which property to
+// show. onEachFeature + bindTooltip is the same pattern the Week 4
+// slide deck template uses for labels.
+// figured out how to do this from the new assignment and so decided to include it here also.
+
+const tooltipOptions = {
+  'market-divide': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(`Market class ${feature.properties.mva_class}`);
+    },
+  },
+  'subsidized-stock': {
+    onEachFeature: (feature, layer) => {
+      const props = feature.properties;
+      layer.bindTooltip(`<strong>${props.project_name}</strong><br>${props.total_units} units`);
+    },
+  },
+  'neighborhood': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(feature.properties.LISTNAME);
+    },
+  },
+  'packer-park': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(`Permit ${feature.properties.permitnumber}`);
+    },
+  },
+  'specific': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(`Permit ${feature.properties.permitnumber}`);
+    },
+  },
+  'vacant-land': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(feature.properties.address);
+    },
+  },
+  'specific_vacant': {
+    onEachFeature: (feature, layer) => {
+      layer.bindTooltip(feature.properties.address);
+    },
+  },
+};
+
+for (const slideId of Object.keys(tooltipOptions)) {
+  slideOptions[slideId].onEachFeature = tooltipOptions[slideId].onEachFeature;
+}
+
 const deck = new SlideDeck(container, slides, map, slideOptions);
 
 document.addEventListener('scroll', () => deck.calcCurrentSlideIndex());

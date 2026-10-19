@@ -173,3 +173,20 @@ body {
     font-size: 0.8rem;
   }
 }
+
+/* adjusting slides and legend for smaller screens -
+adapted from Week 2, using the format required by course Stylelint
+missed it when i initially did this so now i am adding it here */
+@media screen and (width <= 425px) {
+  .slide {
+    width: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .legend {
+    margin-left: 10px; /* spacing from the Week 2 example */
+    width: auto;
+    font-size: 11px;
+  }
+}
