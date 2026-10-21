@@ -160,33 +160,27 @@ body {
 }
 
 /* smaller screens: slides and legend shrink to fit phones - used Claude for this codee for mobile phone use */
-@media (width <= 600px) {
+
+/* adjusts the slides and legend for screens 600px wide or smaller */
+
+@media screen and (width <= 600px) {
   .slide {
+    /* lets the slide width adjust to the available space */
     width: auto;
+
+    /* leaves space on both sides, based on the root font size */
     margin-left: 1rem;
     margin-right: 1rem;
+
+    /* rounds the slide's corners */
     border-radius: 1.5rem;
   }
 
   .legend {
+    /* adds space between the legend's content and its edges */
     padding: 0.5rem;
+
+    /* sets the text size to 80% of the root font size */
     font-size: 0.8rem;
-  }
-}
-
-/* adjusting slides and legend for smaller screens -
-adapted from Week 2, using the format required by course Stylelint
-missed it when i initially did this so now i am adding it here */
-@media screen and (width <= 425px) {
-  .slide {
-    width: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .legend {
-    margin-left: 10px; /* spacing from the Week 2 example */
-    width: auto;
-    font-size: 11px;
   }
 }

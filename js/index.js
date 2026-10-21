@@ -96,7 +96,7 @@ const slideOptions = {
         radius: 2,
         fillColor: 'white',
         color: 'red',
-        weight: 1,
+        weight: 2,
         opacity: 1,
         fillOpacity: 0.8,
       });
@@ -110,7 +110,7 @@ const slideOptions = {
       const ck = Number(feature.properties.class_of_market);
 
       if (ck === 10) {
-        return { color: 'red', weight: 1, fillColor: 'red', fillOpacity: 0 };
+        return { color: 'red', weight: 2, fillColor: 'red', fillOpacity: 0 };
       } else {
         return { color: 'gray', weight: 0.07, fillColor: 'white', fillOpacity: 0 };
       }
