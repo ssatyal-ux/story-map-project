@@ -159,7 +159,9 @@ const slideOptions = {
   },
 };
 
-// I wanted this to be a constant layer in the background. I asked ChatGPT tp tell me how I could. While I did see some of the lessons/examples and videos I did need help to figure this out using chat*/
+// I wanted this to be a constant layer in the background. I asked ChatGPT tp tell me how I could.
+//  While I did see some of the lessons/examples and videos I did need help to figure this out using chat*/
+// loads the market data and adds it to the map so it stays visible unless removed
 const marketResponse = await fetch('data/market-divide.json');
 const marketData = await marketResponse.json();
 L.geoJSON(marketData, slideOptions['market-divide']).addTo(map);
